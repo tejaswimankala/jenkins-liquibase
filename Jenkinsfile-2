@@ -7,7 +7,7 @@ pipeline {
     stage('checkout') {
          checkout SCM
    }
-}
+
     stage('status'){
       steps {
          dir('C:/ProgramData/Jenkins/liquibase-4.12/liquibase/'){
@@ -21,6 +21,7 @@ pipeline {
       }
     }
   }
+}
   post {
     always {
       cleanWs()
