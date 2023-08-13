@@ -13,6 +13,7 @@ pipeline {
          dir('C:/ProgramData/Jenkins/liquibase-4.12/liquibase/'){
         sh 'liquibase status --url="jdbc:mysql://192.168.32.11:3306/my_app" --changeLogFile=my_app-wrapper.xml --username=$MARIADB_CREDS_USR --password=$MARIADB_CREDS_PSW'
       }
+}
     
     stage('Update') {
       steps {
@@ -20,8 +21,6 @@ pipeline {
       }
     }
   }
-}
-}
   post {
     always {
       cleanWs()
